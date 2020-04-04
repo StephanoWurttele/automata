@@ -1,6 +1,5 @@
 #include <iostream>
 
-#include <string>
 #include "automata.h"
 #include "scanner.h"
 int main(){
