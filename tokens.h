@@ -1,6 +1,5 @@
 #ifndef TOKENS_H
 #define TOKENS_H
-#include <iostream>
 
 enum tokens{W, A, P, O, Count};
 class Token{

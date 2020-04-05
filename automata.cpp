@@ -24,12 +24,21 @@ Automata::Automata(std::string filename){
     current_state = states[0];
 }
 
-void Automata::run(std::vector<Token> string){
-
+void Automata::run(std::vector<Token> TokenVec){
+    std::cout << "Starting from state " << current_state->getName(  ) << std::endl;
+    for(Token t : TokenVec){
+        std::cout << "Current state number is "<< current_state->number() << std::endl;
+        for(Transition t2 : transitions[current_state->number()]){
+            if (t2.path() == t.type()){
+                current_state = t2.getTarget();
+                std::cout << "Advanced to " << t2.getTarget()->getName() << " and current is " << current_state->getName() << std::endl;
+            }
+        }
+    }
 };
 
 bool Automata::accepted(){
-    return true;
+    return current_state->final();
 }
 
 State* Automata::FindState(std::string state){

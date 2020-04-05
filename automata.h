@@ -17,7 +17,7 @@ class Automata{
             std::cout << "State " << states[i]->getName()<< " which acceptance state is " << states[i]->final() << std::endl;
             std::cout << "Has transitions:"<<std::endl;
             for(int j=0; j<(int)tokens::Count; ++j){
-                std::cout << "Goes to " << transitions[i][j].getTarget().getName() << " through " << transitions[i][j].path() << std::endl;
+                std::cout << "Goes to " << transitions[i][j].getTarget()->getName() << " through " << transitions[i][j].path() << std::endl;
             }
         }
     }

@@ -11,7 +11,7 @@ class Transition{
     public:
     Transition(int val, State* targetNode);
     tokens path(){return token.type();}
-    State getTarget(){return *target;};
+    State* getTarget(){return target;};
 };
 
 #endif
