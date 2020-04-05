@@ -9,10 +9,12 @@ int main(int argc, char *argv[]){
     std::string mail = "asd@gmail.com";
     std::vector<Token> TokenVec;
     email_tester.show();
-    /*Scanner scanner;
+    Scanner scanner;
     for (char c : mail)  
         TokenVec.push_back(scanner.scan(c));
-    // email_tester.run(TokenVec);
+    for (Token t : TokenVec)
+        std::cout << t.type() << " ";
+    /* email_tester.run(TokenVec);
     // std::cout << email_tester.accepted() ? "Email is valid" : "Email is not valid";
     */
     return 0;

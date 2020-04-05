@@ -9,13 +9,17 @@ Token Scanner::scan(char input){
     tokens token;
     if (w(input))
         token = W;
-    switch (input){
-        case '@':
-            token = A;
-        case '.': 
-            token = P;
-        default:  
-            token = O;
+    else{
+        switch (input){
+            case '@':
+                token = A;
+                break;
+            case '.': 
+                token = P;
+                break;
+            default:  
+                token = O;
+        }
     }
     return Token(token);
 }
