@@ -10,6 +10,7 @@ class State{
     public:
         State(std::string _name, bool _end):name(_name), acceptance(_end){};
         bool final(){return acceptance;};
+        std::string getName(){return name;};
     
 };
 

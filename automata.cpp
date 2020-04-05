@@ -10,17 +10,32 @@ Automata::Automata(std::string filename){
     for(int i = 0; i < NodeNum; i++ ){
         getline(format,temp);
         getline(format, ANode);
-        states.emplace_back(temp, ANode == "1");
+        State* tempS = new State(temp, ANode == "1");
+        states.push_back(tempS);
     }
-    for(int i = 0; i < NodeNum; i++ ){
+    for(int i = 0; i < NodeNum; ++i ){
         std::vector<Transition> vec;
-        for(int i = 0; i < (int)tokens::Count; ++i){
+        for(int j = 0; j < (int)tokens::Count; ++j){
             getline(format, targetNode);
-            vec.emplace_back(W);
+            vec.emplace_back(j, FindState(targetNode));
         }
+        transitions.push_back(vec);
     }
+    current_state = states[0];
 }
 
 void Automata::run(std::vector<Token> string){
 
 };
+
+bool Automata::accepted(){
+    return true;
+}
+
+State* Automata::FindState(std::string state){
+    for (State* x:states){
+        if  (x->getName() == state){
+            return x;
+        }
+    }
+}

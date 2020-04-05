@@ -7,10 +7,11 @@
 class Transition{
     private:
     Token token;
-    State target;
+    State* target;
     public:
-    Transition();
-    tokens path(){return token.type;}
+    Transition(int val, State* targetNode);
+    tokens path(){return token.type();}
+    State getTarget(){return *target;};
 };
 
 #endif

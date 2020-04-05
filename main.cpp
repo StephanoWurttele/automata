@@ -1,14 +1,19 @@
-#include <iostream>
-
 #include "automata.h"
 #include "scanner.h"
-int main(){
-    Automata email_tester;
+int main(int argc, char *argv[]){
+    if (argc == 1){
+        std::cout<<"Please enter automata file";
+        return 0;
+    };
+    Automata email_tester(argv[1]);
     std::string mail = "asd@gmail.com";
-    std::vector<Token> input;
-    Scanner scanner;
+    std::vector<Token> TokenVec;
+    email_tester.show();
+    /*Scanner scanner;
     for (char c : mail)  
-        input.push_back(scanner.scan(c));
-    email_tester.run(input);
-    std::cout << email_tester.accepted() ? "Email is valid" : "Email is not valid";
+        TokenVec.push_back(scanner.scan(c));
+    // email_tester.run(TokenVec);
+    // std::cout << email_tester.accepted() ? "Email is valid" : "Email is not valid";
+    */
+    return 0;
 };

@@ -7,7 +7,7 @@ bool w(char character)
 
 Token Scanner::scan(char input){
     tokens token;
-    if (w('input'))
+    if (w(input))
         token = W;
     switch (input){
         case '@':
